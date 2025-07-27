@@ -111,3 +111,9 @@ https://github.com/grbl
 ### GRBL Arduino Library
 
 [GRBL Arduino Library – Use the Arduino IDE to flash GRBL directly to your Arduino](https://blog.protoneer.co.nz/grbl-arduino-library/)
+
+## Control
+
+### G-Code Sender
+
+[gSender](https://resources.sienci.com/view/gs-installation/)
