@@ -31,7 +31,7 @@ Anet Step Motor 42SHDC3025-24B
 
 The stepper motor was salvaged from Jeff's original ALUNAR Anet A8 purchased in May 2017 from Amazon. The motor is known to have a non-standard wiring pinout and cannot be plugged directly into the V3 CNC Shield using the stepper motor cable.
 
-[Stepper Motor](images/Anet42StepperMotorfor3DPrinter.png)
+<img src="images/Anet42StepperMotorfor3DPrinter.png" width=50%>
 
 ## `TMC2208_Simple.ino`, TMC2208 Stepper Example Code
 
