@@ -4,7 +4,11 @@ A general repository for learning and planning the development of CNC machines u
 
 ## Electronics
 
-### V3 CNC Shield with Arduino Uno
+### Arduino UNO
+
+<img src="images/Arduino UNO.png" width=50%>
+
+### V3 CNC Shield for Arduino UNO
 
 Originally purchased October 2020 from Amazon.
 
@@ -38,11 +42,13 @@ The stepper motor was salvaged from Jeff's original ALUNAR Anet A8 purchased in 
 
 Refer to the image above for the specific wiring for the Anet stepper. If you're using a different stepper motor, be sure to check its specific wiring diagram before connecting it to the CNC Shield.
 
-## Electronics
+## Wiring
+
+1. Install the CNC Shield on top of the Arduino UNO.
+1. Install the TMC2208 into the CNC Shield. Orient the TMC2208 such that the enable pin ("EN") on the driver matches the enable pin ("EN") on the CNC Shield.
+1. Install the heat sink on the TMC2208 if it is not already installed.
 
 ## Software
-
-
 
 
 ## `TMC2208_Simple.ino`, TMC2208 Stepper Example Code
