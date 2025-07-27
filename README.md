@@ -20,6 +20,8 @@ Originally purchased October 2020 from Amazon.
 
 <img src="images/CNC Shield.jpg" width=50%>
 
+The original development blog for the CNC shield can be found [here](https://blog.protoneer.co.nz/arduino-cnc-shield/).
+
 Some basic code can be found 
 [here](https://www.aranacorp.com/en/using-an-arduino-cnc-shield-v3/). I 
 suggest using this code only to identify the pins on the CNC shield and 
