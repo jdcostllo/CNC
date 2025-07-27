@@ -65,7 +65,7 @@ Refer to the image above for the specific wiring for the Anet stepper. If you're
 ### Verify Board and Wiring: `TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino`
 
 The TMC2208 driver has a library within the Arduino IDE with provided examples. Version 0.2.5 is latest at time of 
-this README. The INO file [`TMC2208_Example.ino`](TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino) is a modified version of the example code from the TMC2208 Arduino Library.
+this README. The INO file [TMC2208_Example.ino](TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino) is a modified version of the example code from the TMC2208 Arduino Library.
 
 For this file, connect your stepper motor and stepper driver to the Y-Axis of the CNC Shield.
 
