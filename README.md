@@ -2,6 +2,10 @@
 
 A general repository for learning and planning the development of CNC machines using a range of off the shelf and custom electronic and software solutions.
 
+
+
+
+
 ## Electronics
 
 ### Arduino UNO
@@ -42,23 +46,30 @@ The stepper motor was salvaged from Jeff's original ALUNAR Anet A8 purchased in 
 
 Refer to the image above for the specific wiring for the Anet stepper. If you're using a different stepper motor, be sure to check its specific wiring diagram before connecting it to the CNC Shield.
 
+
+
+
+
 ## Wiring
 
 1. Install the CNC Shield on top of the Arduino UNO.
 1. Install the TMC2208 into the CNC Shield. Orient the TMC2208 such that the enable pin ("EN") on the driver matches the enable pin ("EN") on the CNC Shield.
 1. Install the heat sink on the TMC2208 if it is not already installed.
 
+
+
+
+
 ## Software
 
+### Verify Board and Wiring: `TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino`
 
-## `TMC2208_Simple.ino`, TMC2208 Stepper Example Code
+The TMC2208 driver has a library within the Arduino IDE with provided examples. Version 0.2.5 is latest at time of 
+this README. The INO file [`TMC2208_Example.ino`](TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino) is a modified version of the example code from the TMC2208 Arduino Library.
 
-For this file, connect your stepper motor and stepper driver to the Y-Axis of the CNC Shield. Review the following wepages and images for clarification about how to connect the motor.
+For this file, connect your stepper motor and stepper driver to the Y-Axis of the CNC Shield.
 
-### TMC2208 Stepper Motor Driver 
 
-This driver has a library within the Arduino IDE with provided examples. Version 0.2.5 is latest at time of 
-this README. The INO file `TMC2208_Simple.ino`, which can be found in this directory, is a modified version of the example code from the TMC2208 Arduino Library.
 
 ### Stepper
 
