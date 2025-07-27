@@ -38,13 +38,22 @@ Originally purchased October 2020 from Amazon.
 
 ### Stepper Motor
 
-Anet Step Motor 42SHDC3025-24B
+Anet Stepper Motor 42SHDC3025-24B
 
 The stepper motor was salvaged from Jeff's original ALUNAR Anet A8 purchased in May 2017 from Amazon. The motor is known to have a non-standard wiring pinout and cannot be plugged directly into the V3 CNC Shield using the stepper motor cable.
 
 <img src="images/Anet42StepperMotorfor3DPrinter.png" width=50%>
 
-Refer to the image above for the specific wiring for the Anet stepper. If you're using a different stepper motor, be sure to check its specific wiring diagram before connecting it to the CNC Shield.
+**Figure XX**: Anet stepper motor 42SHDC3025-24B with wiring diagram.
+
+| Config | A+ | A- | B+ | B- |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| Default (Anet Connection Diagram) | Blue | Red | Green | Black |
+| Aftermarket (YOTINO Stepper Motor Cable) | Black | Red | Green | Blue |
+
+**Table 1**: Anet stepper motor 42SHDC3025-24B with aftermarket stepper motor cable wiring table.
+
+Refer to both the image and table above for the specific wiring for the Anet stepper. If you're using a different stepper motor, be sure to check its specific wiring diagram before connecting it to the CNC Shield.
 
 
 
@@ -55,6 +64,11 @@ Refer to the image above for the specific wiring for the Anet stepper. If you're
 1. Install the CNC Shield on top of the Arduino UNO.
 1. Install the TMC2208 into the CNC Shield. Orient the TMC2208 such that the enable pin ("EN") on the driver matches the enable pin ("EN") on the CNC Shield.
 1. Install the heat sink on the TMC2208 if it is not already installed.
+1. Refer to Table 1. With the CNC Shield oriented upright, so the text on the board is legible, connect the stepper motor wires to CNC Shield in the order A+, A-, B+, B- following the configuration of the aftermarket cable. This will likely require additional jumpers or modifications to the existing cable, as the order will likely be wrong. 
+
+**Note to Self:** I removed the existing 4-slot dupont connector on the cable and used my 1-slot dupont connectors to separate the cable into four individual wires. This way, I can make my wiring connections as desired.
+
+
 
 
 
@@ -65,7 +79,7 @@ Refer to the image above for the specific wiring for the Anet stepper. If you're
 ### Verify Board and Wiring: `TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino`
 
 The TMC2208 driver has a library within the Arduino IDE with provided examples. Version 0.2.5 is latest at time of 
-this README. The INO file [TMC2208_Example.ino](/TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino) is a modified version of the example code from the TMC2208 Arduino Library.
+this README. The INO file [TMC2208_Example.ino](TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino) is a modified version of the example code from the TMC2208 Arduino Library.
 
 For this file, connect your stepper motor and stepper driver to the Y-Axis of the CNC Shield.
 
