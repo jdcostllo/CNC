@@ -83,9 +83,6 @@ Refer to both the image and table above for the specific wiring for the Anet ste
 
 
 
-
-
-
 ## Software
 
 ### Verify Board and Wiring: `TMC2208 with V3 CNC Shield/TMC2208_Example/TMC2208_Example.ino`
