@@ -110,7 +110,27 @@ https://github.com/grbl
 
 ## GRBL Configuration Modification
 
-You must edit the following files in your library in order to get the correct behavior of the SG90 servo. By default the TCCRB timer on the arduino has a PWM which is wayyyy too fast for the SG90 servo. By changing the onboard timer prescaler, we can achieve a slower PWM which actually works with the SG90. Check out this [link](https://github.com/grbl/grbl/issues/328) to show the available prescaler settings. Then, make the appropriate edits in the `spindle_control.c` file.
+You must edit the following files in your library in order to get the correct behavior of the SG90 servo. By default the TCCRB timer on the arduino has a PWM which is wayyyy too fast for the SG90 servo. By changing the onboard timer prescaler, we can achieve a slower PWM which actually works with the SG90. Check out this [link](https://github.com/grbl/grbl/issues/328) to show the available prescaler settings. Then, make the appropriate edits in the `spindle_control.c` file. Or, I have captioned the prescaler settings below from the forum responder `EliteEng con Jan 9, 2014`:
+
+```
+The per scaler of timer2 is currently set to 8 ( 16MHz / 8 = 2MHz )
+
+Other per scalers available on timer2 are 1,8,32,64,128,256,1024 ( data sheet pg 162 http://www.atmel.com/Images/doc8161.pdf)
+
+Setting Divisor
+0x01 1
+0x02 8
+0x03 32
+0x04 64
+0x05 128
+0x06 256
+0x07 1024
+
+Change the setting value of line 76 in spindle_control.c
+
+TCCRB_REGISTER = (TCCRB_REGISTER & 0b11111000) | 0x02; // set to 1/8 Prescaler
+^
+```
 
 
 
