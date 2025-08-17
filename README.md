@@ -110,9 +110,11 @@ https://github.com/grbl
 
 ## GRBL Configuration Modification
 
-You must edit the following files in your library in order to get the correct behavior of the SG90 servo.
+You must edit the following files in your library in order to get the correct behavior of the SG90 servo. By default the TCCRB timer on the arduino has a PWM which is wayyyy too fast for the SG90 servo. By changing the onboard timer prescaler, we can achieve a slower PWM which actually works with the SG90. Check out this [link](https://github.com/grbl/grbl/issues/328) to show the available prescaler settings. Then, make the appropriate edits in the `spindle_control.c` file.
 
-The main directory is as follows:
+
+
+The main directory grbl library is as follows on Windows:
 `Documents\Arduino\libraries\grbl`
 
 
@@ -128,7 +130,43 @@ First, ensure variable spindle is enabled in the `config.h` file. This allows D1
 // The hardware PWM output on pin D11 is required for variable spindle output voltages.
 #define VARIABLE_SPINDLE // Default enabled. Comment to disable.
 ```
+Then, change the timer prescaler to get the desired, slower PWM for controlling the SG90 servo.
+`Documents\Arduino\libraries\grbl\spindle_control.c`
 
+Original:
+```
+    #ifdef VARIABLE_SPINDLE
+      // TODO: Install the optional capability for frequency-based output for servos.
+      #ifdef CPU_MAP_ATMEGA2560
+      	TCCRA_REGISTER = (1<<COMB_BIT) | (1<<WAVE1_REGISTER) | (1<<WAVE0_REGISTER);
+        TCCRB_REGISTER = (TCCRB_REGISTER & 0b11111000) | 0x02 | (1<<WAVE2_REGISTER) | (1<<WAVE3_REGISTER); // set to 1/8 Prescaler
+        OCR4A = 0xFFFF; // set the top 16bit value
+        uint16_t current_pwm;
+      #else
+        TCCRA_REGISTER = (1<<COMB_BIT) | (1<<WAVE1_REGISTER) | (1<<WAVE0_REGISTER);
+        TCCRB_REGISTER = (TCCRB_REGISTER & 0b11111000) | 0x02; // set to 1/8 Prescaler
+        uint8_t current_pwm;
+      #endif
+```
+
+Modified:
+
+```
+    #ifdef VARIABLE_SPINDLE
+      // TODO: Install the optional capability for frequency-based output for servos.
+      #ifdef CPU_MAP_ATMEGA2560
+      	TCCRA_REGISTER = (1<<COMB_BIT) | (1<<WAVE1_REGISTER) | (1<<WAVE0_REGISTER);
+        TCCRB_REGISTER = (TCCRB_REGISTER & 0b11111000) | 0x07 | (1<<WAVE2_REGISTER) | (1<<WAVE3_REGISTER); // set to 1/8 Prescaler
+        OCR4A = 0xFFFF; // set the top 16bit value
+        uint16_t current_pwm;
+      #else
+        TCCRA_REGISTER = (1<<COMB_BIT) | (1<<WAVE1_REGISTER) | (1<<WAVE0_REGISTER);
+        TCCRB_REGISTER = (TCCRB_REGISTER & 0b11111000) | 0x07; // set to 1/8 Prescaler
+        uint8_t current_pwm;
+      #endif
+```
+
+After these changes are made to the GRBL library, recompile and reupload to the arduino using your preferred IDE.
 
 ### Compiling GRBL
 
