@@ -69,7 +69,15 @@ The stepper motor was salvaged from Jeff's original ALUNAR Anet A8 purchased in 
 
 Refer to both the image and table above for the specific wiring for the Anet stepper. If you're using a different stepper motor, be sure to check its specific wiring diagram before connecting it to the CNC Shield.
 
+### Servo Motor (Pen Actuator)
 
+TowerPro SG90 (Generic Miniature Servo)
+
+Wiring instructions for SG90 servo with the CNC shield:
+
+https://www.youtube.com/watch?v=iEuP8GzCJwQ&ab_channel=AlgeriaDZ
+
+https://www.youtube.com/watch?v=GzPTYpOC8Ew&ab_channel=OddJobsWorkshop
 
 
 
@@ -99,6 +107,28 @@ For this file, connect your stepper motor and stepper driver to the Y-Axis of th
 ### GRBL
 
 https://github.com/grbl
+
+## GRBL Configuration Modification
+
+You must edit the following files in your library in order to get the correct behavior of the SG90 servo.
+
+The main directory is as follows:
+`Documents\Arduino\libraries\grbl`
+
+
+
+First, ensure variable spindle is enabled in the `config.h` file. This allows D11 to act in PWM mode. In Jeff's original installation, this was already enabled by default. Still, I am including this below.
+
+`Documents\Arduino\libraries\grbl\config.h`
+
+```
+// Enables variable spindle output voltage for different RPM values. On the Arduino Uno, the spindle
+// enable pin will output 5V for maximum RPM with 256 intermediate levels and 0V when disabled.
+// NOTE: IMPORTANT for Arduino Unos! When enabled, the Z-limit pin D11 and spindle enable pin D12 switch!
+// The hardware PWM output on pin D11 is required for variable spindle output voltages.
+#define VARIABLE_SPINDLE // Default enabled. Comment to disable.
+```
+
 
 ### Compiling GRBL
 
