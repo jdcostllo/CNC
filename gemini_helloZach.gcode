@@ -1,0 +1,101 @@
+(Cursive "Hello, Zach")
+(Origin: X75 Y0 | Top-Left)
+
+G21 (Metric)
+G90 (Absolute)
+F800 (Plotting speed)
+
+(--- Start Sequence: Pen Up ---)
+M03 S50
+G04 P0.1
+
+(--- "H" ---)
+G0 X77 Y-18
+M03 S25 (Pen Down)
+G04 P0.1
+G1 X77 Y-2
+G1 X77 Y-10
+G2 X85 Y-10 I4 J0
+G1 X85 Y-2
+G1 X85 Y-18
+M03 S50 (Pen Up)
+G04 P0.1
+
+(--- "e" ---)
+G0 X88 Y-14
+M03 S25
+G04 P0.1
+G3 X92 Y-14 I2 J0
+G1 X88 Y-14
+G2 X92 Y-18 I2 J0
+M03 S50
+G04 P0.1
+
+(--- "l" ---)
+G0 X94 Y-2
+M03 S25
+G04 P0.1
+G1 X94 Y-18
+M03 S50
+G04 P0.1
+
+(--- "l" ---)
+G0 X97 Y-2
+M03 S25
+G04 P0.1
+G1 X97 Y-18
+M03 S50
+G04 P0.1
+
+(--- "o" ---)
+G0 X103 Y-14
+M03 S25
+G04 P0.1
+G2 X103 Y-14 I-3 J0
+M03 S50
+G04 P0.1
+
+(--- Space / Moving to "Zach" ---)
+G0 X115 Y-2
+M03 S25
+G04 P0.1
+(--- "Z" ---)
+G1 X125 Y-2
+G1 X115 Y-18
+G1 X125 Y-18
+M03 S50
+G04 P0.1
+
+(--- "a" ---)
+G0 X132 Y-14
+M03 S25
+G04 P0.1
+G2 X132 Y-14 I-3 J0
+G0 X135 Y-14
+G1 X135 Y-18
+M03 S50
+G04 P0.1
+
+(--- "c" ---)
+G0 X143 Y-14
+M03 S25
+G04 P0.1
+G3 X138 Y-14 I-2.5 J0
+G2 X143 Y-18 I2.5 J0
+M03 S50
+G04 P0.1
+
+(--- "h" ---)
+G0 X146 Y-2
+M03 S25
+G04 P0.1
+G1 X146 Y-18
+G1 X146 Y-14
+G2 X152 Y-14 I3 J0
+G1 X152 Y-18
+M03 S50
+G04 P0.1
+
+(--- End: Return to New Origin ---)
+G0 X75 Y0
+M05

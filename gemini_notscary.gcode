@@ -1,0 +1,114 @@
+(Phrase: "not scary, gurl" - Cursive Script)
+(Height: 15mm | Width: ~85mm | Origin: 0,0)
+(Pen: M03 S50 Up / S25 Down | Dwell: G4 P0.1)
+
+G21 ; mm
+G90 ; Absolute
+M03 S50 ; Pen Up
+G4 P0.1
+
+(--- "not" ---)
+G0 X2.00 Y-10.00
+M03 S25
+G4 P0.1
+G1 X2.00 Y-4.00 F600 (n start)
+G1 X3.50 Y-2.50
+G1 X5.00 Y-4.00
+G1 X5.00 Y-10.00
+G1 X6.50 Y-2.50
+G1 X8.00 Y-4.00
+G1 X8.00 Y-10.00 (n end)
+G1 X11.00 Y-4.00 (bridge to o)
+G1 X13.00 Y-4.00
+G1 X14.50 Y-5.50
+G1 X14.50 Y-8.50
+G1 X13.00 Y-10.00
+G1 X11.50 Y-8.50
+G1 X11.50 Y-5.50
+G1 X13.00 Y-4.00 (o loop)
+G1 X16.00 Y-4.00 (bridge to t)
+G1 X16.00 Y-1.00
+G1 X16.00 Y-10.00 (t stem)
+M03 S50
+G4 P0.1
+G0 X14.50 Y-3.50
+M03 S25
+G4 P0.1
+G1 X17.50 Y-3.50 (t cross)
+M03 S50
+G4 P0.1
+
+(--- "scary," ---)
+G0 X20.00 Y-10.00
+M03 S25
+G4 P0.1
+G1 X22.50 Y-8.50 (s loop)
+G1 X21.00 Y-7.00
+G1 X23.50 Y-5.50
+G1 X25.00 Y-7.00 (s end)
+G1 X28.00 Y-10.00 (bridge to c)
+G1 X31.00 Y-10.00
+G1 X32.50 Y-8.50
+G1 X32.50 Y-5.50
+G1 X31.00 Y-4.00
+G1 X29.00 Y-4.00 (c curve)
+G1 X34.00 Y-10.00 (bridge to a)
+G1 X37.00 Y-10.00
+G1 X38.50 Y-8.50
+G1 X38.50 Y-5.50
+G1 X37.00 Y-4.00
+G1 X35.50 Y-5.50
+G1 X35.50 Y-8.50
+G1 X37.00 Y-10.00
+G1 X40.00 Y-10.00 (a tail/bridge to r)
+G1 X41.50 Y-4.00 (r start)
+G1 X43.00 Y-4.00
+G1 X43.00 Y-10.00
+G1 X45.00 Y-10.00 (bridge to y)
+G1 X46.50 Y-4.00
+G1 X46.50 Y-10.00
+G1 X46.50 Y-13.00
+G1 X45.00 Y-14.50
+G1 X43.50 Y-13.00 (y tail)
+M03 S50
+G4 P0.1
+G0 X48.00 Y-11.00
+M03 S25
+G4 P0.1
+G1 X47.50 Y-13.50 (comma)
+M03 S50
+G4 P0.1
+
+(--- "gurl" ---)
+G0 X55.00 Y-4.00
+M03 S25
+G4 P0.1
+G1 X53.50 Y-5.50 (g start)
+G1 X53.50 Y-8.50
+G1 X55.00 Y-10.00
+G1 X56.50 Y-8.50
+G1 X56.50 Y-4.00
+G1 X56.50 Y-13.00
+G1 X55.00 Y-14.50
+G1 X53.50 Y-13.00 (g tail)
+G1 X59.00 Y-10.00 (bridge to u)
+G1 X59.00 Y-4.00
+G1 X59.00 Y-8.50
+G1 X60.50 Y-10.00
+G1 X62.00 Y-8.50
+G1 X62.00 Y-4.00
+G1 X62.00 Y-10.00
+G1 X65.00 Y-10.00 (bridge to r)
+G1 X66.50 Y-4.00
+G1 X68.00 Y-4.00
+G1 X68.00 Y-10.00
+G1 X71.00 Y-10.00 (bridge to l)
+G1 X72.50 Y-1.00 (l stem)
+G1 X72.50 Y-10.00
+G1 X75.00 Y-10.00 (final flick)
+M03 S50
+G4 P0.1
+
+(--- Finish ---)
+G0 X-20 Y20
+M05
